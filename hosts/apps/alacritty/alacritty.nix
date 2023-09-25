@@ -14,9 +14,9 @@
       };
       font = {
         normal = {
-          family = "Terminus (TTF)";
+          family = "Ubuntu Mono Nerd Font";
         };
-        size = 14;
+        size = 13;
       };
       colors = {
         primary = {

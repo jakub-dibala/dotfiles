@@ -54,5 +54,10 @@
     docker-compose
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     insomnia
+    ansible
+    kitty
+    kitty-themes
+    spotify
+    google-chrome
   ];
 }

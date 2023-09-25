@@ -55,25 +55,33 @@
   services.xserver = {
 	  enable = true;
 	  layout = "cz";
+    dpi = 96;
 	  xkbVariant = "";
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+
+    desktopManager = {
+      xterm.enable = true;
+    };
+
+    displayManager = {
+      defaultSession = "none+i3";
+    };
+
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+      extraPackages = [
+        pkgs.i3status
+        pkgs.i3lock
+        pkgs.i3blocks
+      ];
+    };
 	};
 
 
-	# windowManager.i3 = {
-	# 	enable = true;
-	# 	package = pkgs.i3-gaps;
-	# 	extraPackages = [
-	# 		pkgs.i3status
-	# 		pkgs.i3lock
-	# 		pkgs.i3blocks
-	# 	];
-	# };
 
   fonts = {
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Hack" ]; })
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Hack" "Terminus" "Gohu" "Inconsolata" "EnvyCodeR" "UbuntuMono" ]; })
       terminus_font_ttf
       cm_unicode
       bakoma_ttf
@@ -89,7 +97,7 @@
       };
 
       subpixel = {
-        rgba = "none";
+        rgba = "rgb";
         lcdfilter = "light";
       };
     };
@@ -101,6 +109,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 

@@ -5,6 +5,7 @@
 			pkgs.vscode-extensions.vscodevim.vim
 			pkgs.vscode-extensions.bbenoist.nix
 			pkgs.vscode-extensions.github.github-vscode-theme
+			pkgs.vscode-extensions.bmewburn.vscode-intelephense-client
 		];
 		keybindings = [
 			{
@@ -34,6 +35,18 @@
 			{
 				key = "alt+shift+ú";
 				command = "editor.action.addCommentLine";
+			}
+			{
+				key = "alt+shift+g";
+				command = "editor.action.revealDefinition";
+			}
+			{
+				key = "alt+z";
+				command = "undo";
+			}
+			{
+				key = "alt+shift+z";
+				command = "redo";
 			}
 		];
 	};
