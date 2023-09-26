@@ -27,6 +27,7 @@
       inherit system;
       config.allowUnfree = true;
     };
+
     inherit (nixpkgs.lib) lib;
   in {
     nixosConfigurations = (

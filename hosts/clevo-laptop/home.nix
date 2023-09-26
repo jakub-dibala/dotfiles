@@ -3,19 +3,21 @@
   pkgs,
   user,
   inputs,
+  lib,
   ...
 }: {
   imports = [
-	../apps/alacritty/alacritty.nix
-	../apps/git/git.nix
-	../apps/vscode/vscode.nix
-	../apps/fish/fish.nix
+  ../apps/git/git.nix
+  ../apps/vscode/vscode.nix
+  ../apps/fish/fish.nix
   ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = user;
   home.homeDirectory = "/home/${user}";
+
+  home.sessionVariables.NIX_PATH = "nixpkgs=${inputs.nixpkgs.outPath}";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -59,5 +61,7 @@
     kitty-themes
     spotify
     google-chrome
+    simpleproxy
+    jetbrains.datagrip
   ];
 }

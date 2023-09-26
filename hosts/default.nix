@@ -9,10 +9,11 @@
 }: {
   clevo-laptop = lib.nixosSystem {
     inherit system;
-    specialArgs = {inherit user inputs;};
+    specialArgs = {inherit user inputs nixpkgs;};
     modules = [
       ./clevo-laptop/hardware-configuration.nix
       ./clevo-laptop/configuration.nix
+      ./systemd/inventoro/customer-manager.nix
 
       home-manager.nixosModules.home-manager
       {

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, inputs, user, ... }:
+{ config, lib, pkgs, inputs, user, nixpkgs, ... }:
 
 {
   #imports =
@@ -166,6 +166,7 @@
      lxappearance
      killall
      pulseaudio
+     dunst
   ];
 
   xdg.portal = {
@@ -187,11 +188,11 @@
       dates = "weekly";
       options = "--delete-older-than 30d";
     };
-    registry.nixpkgs.flake = inputs.nixpkgs;
+    registry.nixpkgs.flake = nixpkgs;
     nixPath = ["nixpkgs=/etc/channels/nixpkgs"];
   };
 
-  environment.etc."channels/nixpkgs".source = inputs.nixpkgs.outPath;
+  environment.etc."channels/nixpkgs".source = nixpkgs.outPath;
   
   # Make sure opengl is enabled
   hardware.opengl = {

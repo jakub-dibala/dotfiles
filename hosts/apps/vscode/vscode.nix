@@ -48,6 +48,38 @@
 				key = "alt+shift+z";
 				command = "redo";
 			}
+			{
+				key = "alt+c";
+				command = "editor.action.clipboardCopyAction";
+			}
+			{
+				key = "alt+v";
+				command = "editor.action.clipboardPasteAction";
+			}
+			{
+				key = "alt+a";
+				command = "editor.action.selectAll";
+			}
+			{
+				key = "alt+shift+b";
+				command = "git.checkout";
+			}
+			{
+				key = "alt+shift+k";
+				command = "git.pushTo";
+			}
+			{
+				key = "alt+1";
+				command = "workbench.view.explorer";
+			}
+			{
+				key = "alt+2";
+				command = "workbench.view.scm";
+			}
+			{
+				key = "shift+alt+[BracketLeft]";
+    			command = "editor.action.commentLine";
+  			}
 		];
 	};
 }

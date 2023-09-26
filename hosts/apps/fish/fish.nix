@@ -14,8 +14,10 @@
     shellAliases = {
       vim = "nvim";
       gd = "git diff";
+      dd = "docker-compose";
       gs = "git status";
       k = "kubectl";
+      cc = "cd /data/work/inventoro/(ls /data/work/inventoro | fzf)";
     };
 
     shellInit = ''
